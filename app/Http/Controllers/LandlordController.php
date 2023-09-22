@@ -62,9 +62,10 @@ class LandlordController extends Controller
 
     public function delete(Landlord $landlord)
     {
+        $landlords = Landlord::find($landlord);
         $landlord->delete();
 
-        session()->flash('success', 'Landlord information updated successfully');
+        session()->flash('success', 'Landlord information deleted successfully');
 
         return redirect()->route('landlords.index');
     }

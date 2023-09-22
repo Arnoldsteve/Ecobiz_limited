@@ -1,0 +1,83 @@
+/* Background Styles */
+.cover-bg {
+    background-image: url("path/to/your-background-image.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust as needed for your design */
+    position: relative;
+}
+
+/* Overlay to add a semi-transparent background color */
+.overlay {
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.6
+    ); /* Adjust the alpha value for opacity */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Content Container Styles */
+.cover-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff; /* Text color */
+    width: 100%;
+    max-width: 600px; /* Adjust as needed for your design */
+    padding: 20px;
+}
+
+/* Headline Styles */
+.cover-heading {
+    font-size: 2.5rem; /* Adjust the font size */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Subtitle Styles */
+.cover-subtitle {
+    font-size: 1.5rem; /* Adjust the font size */
+    margin-bottom: 30px;
+}
+
+/* Call-to-Action Button Styles */
+.cover-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Button background color */
+    color: #ffffff; /* Button text color */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem; /* Adjust the font size */
+    transition: background-color 0.3s ease;
+}
+
+.cover-button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}
+
+/* Additional Styles */
+@media (max-width: 768px) {
+    /* Add responsive styles for smaller screens if needed */
+    .cover-content {
+        max-width: 90%;
+        padding: 10px;
+    }
+    .cover-heading {
+        font-size: 2rem;
+    }
+    .cover-subtitle {
+        font-size: 1.25rem;
+    }
+    .cover-button {
+        font-size: 0.9rem;
+    }
+}
