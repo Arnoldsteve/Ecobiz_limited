@@ -60,6 +60,7 @@ class PropertyController extends Controller
 
     public function delete(Property $property)
     {
+        $properties = property::find($property);
         $property->delete();
         
         session()->flash('success', 'Property information updated successfully');

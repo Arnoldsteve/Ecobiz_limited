@@ -1,6 +1,28 @@
 @extends('layouts.app')
 @section('content')
 
+@if (session('success'))
+    <div class="alert alert-success" id="success-message">
+        {{ session('success') }}
+    </div>
+@endif
+
+
+<script>
+    // Function to hide the success message
+    function hideSuccessMessage() {
+        $('alert.alert-success').fadeOut('slow');
+    }
+
+    // Automatically hide the success message after 3 seconds (adjust duration as needed)
+    $(document).ready(function () {
+        setTimeout(hideSuccessMessage, 3000); // 3000 milliseconds (3 seconds)
+    });
+</script>
+
+
+
+
 <div class="card">
    
     <div class="card-header text-center fw-bolder">
@@ -15,7 +37,7 @@
 
     <!-- List All Properties Button -->
     <a href="{{ route('landlords.index') }}" class="btn btn-info">
-        <i class="fas fa-plust"></i> List All Lardlord
+        <i class="fas fa-plust"></i> List All Landlords
     </a>
 </div>
 
@@ -35,15 +57,15 @@
 
                 <td>
                     <a href="{{ route('landlords.edit', $landlord->id) }}" class="btn btn-success btn-sm">
-                        <i class="btn btn-primary"></i> Edit
+                        <i class="fas fa-edit"></i> Edit
                     </a>
                     
                     <!-- Delete Form -->
                     <form action="{{ route('landlords.delete', $landlord->id) }}" method="POST" style="display: inline;">
                         @csrf
-                        @method('PATCH')
+                        @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this landlord?');">
-                            <i class="btn btn-dark"></i> Delete
+                            <i class="fas fa-trash"></i> Delete
                         </button>
                     </form>
                 </td>
